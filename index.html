@@ -7,15 +7,15 @@
         var passwd = "";
         password = prompt('请输入密码');
         var str = b.encode(passwd)
-        if (str != 'MjAyMTEyMTE=') {
-            alert("密码错误！");
-            window.opener = null;
-            window.close();
+        if (str == 'MjAyMTEyMTE=') {
+            alert('口令正确，进行跳转');   
+            window.location.href="http://baidu.com";
+            break;
         }
     </script>
 </head>
 <p>
-    被你猜到了！
+    密码错误！
 </p>
 
 <body>
