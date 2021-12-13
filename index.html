@@ -7,7 +7,7 @@
             var b = new Base64();
             var str = b.encode(document.getElementById("password").value)
             if(str == 'MjAyMTEyMTE='){
-                   location.href='mainpage.html';
+                   window.location.href='mainpage.html';
                    return true;
                 }else{
                 alert("密码不正确！")
