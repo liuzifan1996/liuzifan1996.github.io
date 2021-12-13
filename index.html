@@ -1,24 +1,37 @@
 <html>
 <head>
-    <meta charset="utf-8">
+    <title>个人主页登陆</title>
     <script type="text/javascript" src="base64.js"></script>
     <script type="text/javascript">
-        var b = new Base64();
-        var passwd = "";
-        password = prompt('请输入密码');
-        var str = b.encode(passwd)
-        if (str != 'MjAyMTEyMTE=') {
-            alert("密码错误！");
-            window.opener = null;
-            window.close();
-        }
+        function toopen(){
+            var b = new Base64();
+            var str = b.encode(document.getElementById("password").value)
+            if(str == 'MjAyMTEyMTE='){
+                   document.forms[0].action="mainpage.html";
+                   return true;
+                }else{
+                alert("密码不正确！")
+                return false;
+                }
+            }
     </script>
+    
 </head>
-<p>
-    被你猜到了！
-</p>
-
-<body>
+<body class="img">
+    <div class="wrapper">
+        <div class="loginBox">
+            <div class="loginBoxCenter">
+<form method="post" action="index.html" name="myform" >
+                <p><label for="password">密码：</p>
+                <p><input type="password" id="password" name="password" class="loginInput" placeholder="请输入密码" value="" 
+ 
+/></p>         </div>
+            <div class="loginBoxButtons">
+                <input type="submit" value="登陆" class="loginBtn" onclick="return toopen();">            
+                     </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
