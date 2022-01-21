@@ -1,0 +1,15 @@
+div {
+    color: red;
+    font-size: 100px;
+    font-weight: 900;
+    float: left;
+}
+.d1{
+    width: 1000px;
+    height: 200px;
+}
+.d2{
+    width: 1000px;
+    height: 200px;
+    clear: both;
+}
