@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>个人主页登陆</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="test.css" />
+    <title>QAQ</title>
     <script type="text/javascript" src="base64.js"></script>
     <script type="text/javascript">
         function toopen(){
@@ -15,9 +18,83 @@
                 }
             }
     </script>
-    
+     <script>
+        function startTime() {
+
+            var today = new Date();
+            var time1 = new Date('2021/12/08 13:45:00');
+            var time2 = new Date('2021/12/11 11:15:00');
+
+            var difftime1 = (today - time1) / 1000; //计算时间差,并把毫秒转换成秒
+
+            var d1 = parseInt(difftime1 / 86400); // 天  24*60*60*1000 
+            var h1 = parseInt(difftime1 / 3600) - 24 * d1;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
+            var m1 = parseInt(difftime1 % 3600 / 60); // 分钟 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
+            var s1 = parseInt(difftime1 % 60);  // 以60秒为一整份 取余 剩下秒数
+
+            h1 = checkTime(h1);
+            m1 = checkTime(m1);
+            s1 = checkTime(s1);
+
+            document.getElementById('txt11').innerHTML = d1;
+            document.getElementById('txt12').innerHTML = ":";
+            document.getElementById('txt13').innerHTML = h1;
+            document.getElementById('txt14').innerHTML = ":";
+            document.getElementById('txt15').innerHTML = m1;
+            document.getElementById('txt16').innerHTML = ":";
+            document.getElementById('txt17').innerHTML = s1;
+
+            var difftime2 = (today - time2) / 1000; //计算时间差,并把毫秒转换成秒
+
+            var d2 = parseInt(difftime2 / 86400); // 天  24*60*60*1000 
+            var h2 = parseInt(difftime2 / 3600) - 24 * d2;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
+            var m2 = parseInt(difftime2 % 3600 / 60); // 分钟 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
+            var s2 = parseInt(difftime2 % 60);  // 以60秒为一整份 取余 剩下秒数
+
+            h2 = checkTime(h2);
+            m2 = checkTime(m2);
+            s2 = checkTime(s2);
+
+            document.getElementById('txt21').innerHTML = d2;
+            document.getElementById('txt22').innerHTML = ":";
+            document.getElementById('txt23').innerHTML = h2;
+            document.getElementById('txt24').innerHTML = ":";
+            document.getElementById('txt25').innerHTML = m2;
+            document.getElementById('txt26').innerHTML = ":";
+            document.getElementById('txt27').innerHTML = s2;
+
+
+            t = setTimeout(function () { startTime() }, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
 </head>
-<body class="img">
+<body class="img" onload="startTime()">
+     <div class="d1">
+        <div id="txt11" style="border: 3px solid black;text-align: center;"></div>
+        <div id="txt12"></div>
+        <div id="txt13" style="border: 3px solid black;text-align: center;"></div>
+        <div id="txt14"></div>
+        <div id="txt15" style="border: 3px solid black;text-align: center;"></div>
+        <div id="txt16"></div>
+        <div id="txt17" style="border: 3px solid black;text-align: center;"></div>
+    </div>
+
+    <div class="d2">
+        <div id="txt21" style="border: 3px solid black;text-align: center;"></div>
+        <div id="txt22"></div>
+        <div id="txt23" style="border: 3px solid black;text-align: center;"></div>
+        <div id="txt24"></div>
+        <div id="txt25" style="border: 3px solid black;text-align: center;"></div>
+        <div id="txt26"></div>
+        <div id="txt27" style="border: 3px solid black;text-align: center;"></div>
+    </div>
+    
     <div class="wrapper">
         <div class="loginBox">
             <div class="loginBoxCenter">
