@@ -9,14 +9,28 @@
         function toopen(){
             var b = new Base64();
             var str = b.encode(document.getElementById("password").value)
-            if(str == 'MjAyMTEyMTE='){
-                   window.location.href="/mainpage.html";
+            if(str == 'MjAyMTEyMTE=')
+            {
+                   alert("密码正确!");
+                   alert("但是其他内容还没做好。。。。");
+                   alert("原谅我吧QAQ");
                    return true;
-                }else{
-                alert("密码不正确！")
-                return false;
-                }
+             }
+            else if(str == 'MDEyNA==')
+            {
+                alert("密码正确!");
+                alert("生日快乐！！！");
+                alert("Happy Birthday to you！！！");
+                alert("Happy Birthday to you！！！");
+                alert("Happy Birthday to you！！！");
+                return true;
             }
+            else
+            {
+                alert("密码不正确哦~再想想:)");
+                return false;
+             }
+        }
     </script>
      <script>
         function startTime() {
