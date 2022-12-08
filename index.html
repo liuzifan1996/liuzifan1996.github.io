@@ -126,12 +126,19 @@
             -webkit-transform-origin: 0% 100%;
             transform-origin: 0% 100%
         }
+        #pinkboard {
+            animation: anim 1.5s ease-in-out infinite;
+            -webkit-animation: anim 1.5s ease-in-out infinite;
+            -o-animation: anim 1.5s ease-in-out infinite;
+            -moz-animation: anim 1.5s ease-in-out infinite;
+        }
     </style>
 </head>
 
-<body>
+<body> 
     <div class="index-bg">
         <canvas id="canvas" width="1920" height="947"></canvas>
+       
         <div class="stars">
            
             <div class="star"></div>
@@ -219,6 +226,7 @@
                     this.height = 408.6;
                 };
                 var  words = [
+                    "相遇一周年",
                     "我爱你❤赵梦涵",
                     "好喜欢你(#^.^#)嘿嘿",
                     "快点好起来呀",
@@ -249,7 +257,7 @@
                 for(var i = 0; i < words_num; i++)
                 {
                     var num = Math.random();
-                    num = num * 10;
+                    num = num * words.length;
                     num = Math.floor(num);
                     wordarray.push(num);
                 }
