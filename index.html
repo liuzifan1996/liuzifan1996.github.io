@@ -1,157 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="test.css" />
-    <title>❤❤❤❤❤❤❤❤</title>
-    <script type="text/javascript" src="base64.js"></script>
-    <script type="text/javascript">
-        function toopen(){
-            var b = new Base64();
-            var today = new Date();
-            var month = today.getMonth();
-            var day = today.getDate();
-            var str = b.encode(document.getElementById("password").value)
-            if(str == 'MjAyMTEyMTE=')
-            {
-                   alert("密码正确!");
-                   alert("但是内容还没做好。。。。");
-                   alert("原谅我吧QAQ");
-                   return false;
-             }
-            else if(str == 'MDEyNA==')
-            {
-                if(month != 1 || day != 24)
-                {
-                    alert("不是今天哦~");
-                    return false;
-                }
-                alert("密码正确!(｡･ω･｡)");
-                alert("生日快乐！！！");
-                alert("祝你生日快乐~ (ﾉﾟ∀ﾟ)ﾉ ");
-                alert("Happy Birthday to you~ ﾍ(ﾟ∀ﾟﾍ) ");
-                alert("赵梦涵！！！");
-                alert("我真的好喜欢你啊！❤");
-                alert("遇到你之后的每一天都在想你｡◕ᴗ◕｡");
-                alert("和你在一起一直都很开心｡◕ᴗ◕｡");
-                alert("和你有关的每件事都很关心｡◕ᴗ◕｡");
-                alert("想做一个动画短片送给你(•ᴗ•)");
-                alert("但是太懒了，还没画好(；´д｀)ゞ");
-                alert("网站页面也做的一团糟(╥╯^╰╥)");
-                alert("我真是个懒狗5555┭┮﹏┭┮");
-                alert("请你原谅我吧QAQ");
-                alert("咳咳");
-                alert("下面是我的生日祝福");
-                alert("希望涵涵~");
-                alert("每天开心，快快乐乐");
-                alert("学业有成，多发paper");
-                alert("心想事成，万事如意");
-                alert("一帆风顺，未来可期");
-                alert("寿比南山，鹏程万里");
-                alert("兄友弟恭，伉俪情深");
-                alert("登峰造极，无微不至 -_-||奇怪起来了");
-                alert("入乡随俗，身临其境 ");
-                alert("⊙﹏⊙好吧，我的成语储备用完了");
-                alert("最后。。。这是倒数第二个弹窗了，在心里许个愿望再点下确定吧！(✪ω✪)");
-                alert("你的愿望一定会实现！爱你(・ω<)");
-                return true;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>stars</title>
+    <style>
+
+        @-webkit-keyframes star-opacity {
+            0% {
+                opacity: 0
             }
-            else
-            {
-                alert("密码不正确哦~再想想，密码是日期哦:)");
-                return false;
-             }
-        }
-    </script>
-     <script>
-        function startTime() {
 
-            var today = new Date();
-            var time1 = new Date('2021/12/08 13:45:00');
-            var time2 = new Date('2021/12/11 11:15:00');
-
-            var difftime1 = (today - time1) / 1000; //计算时间差,并把毫秒转换成秒
-
-            var d1 = parseInt(difftime1 / 86400); // 天  24*60*60*1000 
-            var h1 = parseInt(difftime1 / 3600) - 24 * d1;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
-            var m1 = parseInt(difftime1 % 3600 / 60); // 分钟 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
-            var s1 = parseInt(difftime1 % 60);  // 以60秒为一整份 取余 剩下秒数
-
-            h1 = checkTime(h1);
-            m1 = checkTime(m1);
-            s1 = checkTime(s1);
-
-            document.getElementById('txt11').innerHTML = d1;
-            document.getElementById('txt12').innerHTML = ":";
-            document.getElementById('txt13').innerHTML = h1;
-            document.getElementById('txt14').innerHTML = ":";
-            document.getElementById('txt15').innerHTML = m1;
-            document.getElementById('txt16').innerHTML = ":";
-            document.getElementById('txt17').innerHTML = s1;
-
-            var difftime2 = (today - time2) / 1000; //计算时间差,并把毫秒转换成秒
-
-            var d2 = parseInt(difftime2 / 86400); // 天  24*60*60*1000 
-            var h2 = parseInt(difftime2 / 3600) - 24 * d2;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
-            var m2 = parseInt(difftime2 % 3600 / 60); // 分钟 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
-            var s2 = parseInt(difftime2 % 60);  // 以60秒为一整份 取余 剩下秒数
-
-            h2 = checkTime(h2);
-            m2 = checkTime(m2);
-            s2 = checkTime(s2);
-
-            document.getElementById('txt21').innerHTML = d2;
-            document.getElementById('txt22').innerHTML = ":";
-            document.getElementById('txt23').innerHTML = h2;
-            document.getElementById('txt24').innerHTML = ":";
-            document.getElementById('txt25').innerHTML = m2;
-            document.getElementById('txt26').innerHTML = ":";
-            document.getElementById('txt27').innerHTML = s2;
-
-
-            t = setTimeout(function () { startTime() }, 500);
-        }
-        function checkTime(i) {
-            if (i < 10) {
-                i = "0" + i;
+            40% {
+                opacity: 1
             }
-            return i;
+
+            60% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
         }
-    </script>
+
+        @keyframes star-opacity {
+            0% {
+                opacity: 0
+            }
+
+            40% {
+                opacity: 1
+            }
+
+            60% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes star-pos {
+            0% {
+                transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -webkit-transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -moz-transform: scale(0) rotate(0) translate3d(0, 0, 0)
+            }
+
+            100% {
+                transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -webkit-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -moz-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0)
+            }
+        }
+
+        @keyframes star-pos {
+            0% {
+                transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -webkit-transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -moz-transform: scale(0) rotate(0) translate3d(0, 0, 0)
+            }
+
+            100% {
+                transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -webkit-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -moz-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0)
+            }
+        }
+        canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .index-bg {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(-225deg, #100541 0%, #194355 51%, #0e2523 100%);
+        }
+
+        .index-bg .stars {
+            height: 0
+        }
+
+        .index-bg .star {
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #fff;
+            top: 100px;
+            left: 400px;
+            position: relative;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            -webkit-box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+            box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+            opacity: 0;
+            z-index: 2
+        }
+
+        .index-bg .star:after {
+            content: '';
+            display: block;
+            top: 0;
+            left: 4px;
+            border: 0 solid #fff;
+            border-width: 0 90px 2px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, .3);
+            -webkit-transform: rotate(-45deg) translate3d(1px, 3px, 0);
+            transform: rotate(-45deg) translate3d(1px, 3px, 0);
+            -webkit-box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+            box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+            -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%
+        }
+    </style>
 </head>
-<body class="img" onload="startTime()">
-     <div class="d1">
-        <div id="txt11" style="border: 3px solid black;text-align: center;"></div>
-        <div id="txt12"></div>
-        <div id="txt13" style="border: 3px solid black;text-align: center;"></div>
-        <div id="txt14"></div>
-        <div id="txt15" style="border: 3px solid black;text-align: center;"></div>
-        <div id="txt16"></div>
-        <div id="txt17" style="border: 3px solid black;text-align: center;"></div>
-    </div>
 
-    <div class="d2">
-        <div id="txt21" style="border: 3px solid black;text-align: center;"></div>
-        <div id="txt22"></div>
-        <div id="txt23" style="border: 3px solid black;text-align: center;"></div>
-        <div id="txt24"></div>
-        <div id="txt25" style="border: 3px solid black;text-align: center;"></div>
-        <div id="txt26"></div>
-        <div id="txt27" style="border: 3px solid black;text-align: center;"></div>
-    </div>
+<body>
+    <div class="index-bg">
+        
+        <div class="stars">
+           
+            <div class="star"></div>
+            <div class="star" style="top: 80px; left: 800px; animation-delay: 3s;"></div>
+            <div class="star" style="top: 40px; left: 646px; animation-delay: 2s;"></div>
+            <div class="star" style="top: 60px; left: 846px; animation-delay: 2s;"></div>
+            <div class="star" style="top: 120px; left: 395px; animation-delay: 4s;"></div>
+            <div class="star" style="top: 160px; left: 765px; animation-delay: 1s;"></div>
+            <div class="star" style="top: 170px; left: 1200px; animation-delay: 2s;"></div>
+            <div class="star" style="top: 200px; left: 1000px; animation-delay: 1s;"></div>
+            
+            <canvas id="canvas" width="1920" height="947"></canvas>
+           
+            <script type="text/javascript">
+                const colors = [
+                    "#eec996",
+                    "#8fb7d3",
+                    "#b7d4c6",
+                    "#c3bedd",
+                    "#f1d5e4",
+                    "#cae1d3",
+                    "#f3c89d",
+                    "#d0b0c3",
+                    "#819d53",
+                    "#c99294",
+                    "#cec884",
+                    "#ff8e70",
+                    "#e0a111",
+                    "#fffdf6",
+                    "#cbd7ac",
+                    "#e8c6c0",
+                    "#dc9898",
+                    "#ecc8ba",
+                ]; //用来设置的颜色
+                var canvas = document.getElementById("canvas");
+                var ctx = canvas.getContext("2d");
+                let count = 1;
+        
+                var ww = window.innerWidth;
+                var wh = window.innerHeight;
+        
+                var hearts = [];
+                var words_num = 400;
+                function init() {
+                    requestAnimationFrame(render);
+                    canvas.width = ww;
+                    canvas.height = wh;
+                    for (var i = 0; i < words_num; i++) {
+                        hearts.push(new Heart());
+                    }
+                }
+        
+                function Heart() {
+                    this.x = Math.random() * ww;
+                    this.y = Math.random() * wh;
+                    this.opacity = Math.random() * 0.5 + 0.5;
+                    this.vel = {
+                        x: (Math.random() - 0.5) * 4,
+                        y: (Math.random() - 0.5) * 4,
+                    };
+                    this.targetScale = Math.random() * 0.15 + 0.02;
+                    this.scale = this.targetScale * Math.random();
+                }
+        
+                Heart.prototype.update = function (i) {
+                    this.x += this.vel.x;
+                    this.y += this.vel.y;
+        
+                    this.scale += (this.targetScale - this.scale) * 0.01;
+                    if (this.x - this.width > ww || this.x + this.width < 0) {
+                        this.scale = 0;
+                        this.x = Math.random() * ww;
+                    }
+                    if (this.y - this.height > wh || this.y + this.height < 0) {
+                        this.scale = 0;
+                        this.y = Math.random() * wh;
+                    }
+                    this.width = 473.8;
+                    this.height = 408.6;
+                };
+                var  words = [
+                    "我爱你❤赵梦涵",
+                    "好喜欢你(#^.^#)嘿嘿",
+                    "快点好起来呀",
+                    "想一起吃火锅",
+                    "好想你QAQ",
+                    "你好温柔我哭死5555",
+                    "早已遇见我的蒙娜丽莎",
+                    "好好吃饭",
+                    "可爱女人",
+                    "小赵冲冲冲",
+                    "I LOVE U"
+                ];
+                Heart.prototype.draw = function (i,j) {
+                    ctx.globalAlpha = this.opacity;
+                    ctx.font = `${180 * this.scale}px "微软雅黑"`;
+                    // ctx.font="20px";
+                    ctx.fillStyle = colors[i % 18];
+                    ctx.fillText(
+                        words[j],
+                        this.x - this.width * 0.5,
+                        this.y - this.height * 0.5,
+                        this.width,
+                        this.height
+                    );
+        
+                };
+                var wordarray = [];
+                for(var i = 0; i < words_num; i++)
+                {
+                    var num = Math.random();
+                    num = num * 10;
+                    num = Math.floor(num);
+                    wordarray.push(num);
+                }
+                function render() {
+                    ctx.clearRect(0, 0, ww, wh);
+                    // ctx.globalAlpha = 1;
+                    // ctx.fillStyle = "rgba(255,255,255,0.3)";
+                    // ctx.fillRect(0, 0, ww, wh);
+                    for (var i = 0; i < words_num; i++) {
+                        hearts[i].update(i);
+                        hearts[i].draw(i,wordarray[i]);
+                    }
+                    requestAnimationFrame(render);
+                }
+                init();
+        
+                window.addEventListener("resize", function () {
+                    ww = window.innerWidth;
+                    wh = window.innerHeight;
+                });
+            </script>
     
-    <div class="wrapper">
-        <div class="loginBox">
-            <div class="loginBoxCenter">
-<form method="post" action="index.html" name="myform" >
-                <p><label for="password">密码：</p>
-                <p><input type="password" id="password" name="password" class="loginInput" placeholder="请输入密码" value="" 
- 
-/></p>         </div>
-            <div class="loginBoxButtons">
-                <input type="submit" value="登陆" class="loginBtn" onclick="return toopen();">            
-                     </form>
-            </div>
         </div>
     </div>
 </body>
